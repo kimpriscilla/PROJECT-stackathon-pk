@@ -1,3 +1,47 @@
 body {
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 605px;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding: 30px 30px 25px;
+}
+
+.wrapper header {
+  text-align: center;
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.wrapper .content {
+  margin: 35px;
+}
+
+.wrapper .quote-area {
+  display: flex;
+  justify-content: center;
+}
+
+.quote-area .quote {
+  font-size: 22px;
+  text-align: center;
+}
+
+.content .author {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
 }
