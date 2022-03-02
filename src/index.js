@@ -33,6 +33,12 @@ function App() {
     // console.log("??????", setQuotes(quotes[randomQuote].quote));
     console.log("am i diff?", quotes);
   };
+
+  const speaker = () => {
+    let utterance = new SpeechSynthesisUtterance(`${quotes} by ${author}`);
+    speechSynthesis.speak(utterance);
+  };
+
   return (
     <>
       <div className="wrapper">
@@ -48,6 +54,7 @@ function App() {
         </div>
         <div className="buttons">
           <button onClick={() => generateRandomQuote()}>New Quote</button>
+          <button onClick={() => speaker()}>Speak</button>
         </div>
       </div>
     </>

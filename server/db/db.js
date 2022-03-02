@@ -6,9 +6,9 @@ const conn = new Sequelize(
 
 const { quotesData } = require("../../script/quotesData");
 
-const User = conn.define("user", {
-  name: STRING,
-});
+// const User = conn.define("user", {
+//   name: STRING,
+// });
 
 const Quote = conn.define("quote", {
   quote: STRING,
@@ -18,18 +18,18 @@ const Quote = conn.define("quote", {
 
 const syncAndSeed = async () => {
   await conn.sync({ force: true });
-  await Promise.all([
-    User.create({ name: "moe" }),
-    User.create({ name: "larry" }),
-    User.create({ name: "lucy" }),
-  ]);
+  // await Promise.all([
+  //   User.create({ name: "moe" }),
+  //   User.create({ name: "larry" }),
+  //   User.create({ name: "lucy" }),
+  // ]);
   quotesData.forEach(async (quote) => await Quote.create(quote));
 };
 
 module.exports = {
   syncAndSeed,
   models: {
-    User,
+    // User,
     Quote,
   },
 };
