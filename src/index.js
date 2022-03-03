@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import axios from "axios";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
   const [quotes, setQuotes] = useState("I love you");
   const [quotesArr, setQuotesArr] = useState(null);
   const [author, setAuthor] = useState("Priscilla");
@@ -11,14 +11,14 @@ function App() {
 
   useEffect(() => {
     const fetchQuotes = async () => {
-      setLoading(true);
+      ///setLoading(true);
       try {
         const { data } = await axios.get("/api/quotes");
         setQuotesArr(data);
       } catch (error) {
         console.log(error);
       }
-      setLoading(false);
+      //setLoading(false);
     };
     fetchQuotes();
   }, []);
@@ -35,28 +35,40 @@ function App() {
   };
 
   const speaker = () => {
-    let utterance = new SpeechSynthesisUtterance(`${quotes} by ${author}`);
+    let utterance, voices;
+    // voices = window.speechSynthesis.getVoices();
+    console.log(voices);
+    utterance = new SpeechSynthesisUtterance(`${quotes} by ${author}`);
+    //utterance.voice = voices[59];
     speechSynthesis.speak(utterance);
+  };
+
+  const copy = () => {
+    navigator.clipboard.writeText(`${quotes} `);
   };
 
   return (
     <>
-      <div className="wrapper">
-        <header> Quote of the day</header>
-        <div className="content">
-          <div className="quote-area">
-            <div className="quote">{quotes}</div>
+      <section id="showcase">
+        <video src="clouds.mp4" muted loop autoPlay></video>
+        <div className="wrapper">
+          <header> Quote of the day</header>
+          <div className="content">
+            <div className="quote-area">
+              <div className="quote">{quotes}</div>
+            </div>
+            <div className="author">
+              <span> ----</span>
+              <span> {author}</span>
+            </div>
           </div>
-          <div className="author">
-            <span> ----</span>
-            <span> {author}</span>
+          <div className="buttons">
+            <button onClick={() => generateRandomQuote()}>New Quote</button>
+            <button onClick={() => speaker()}>Speak</button>
+            <button onClick={() => copy()}>Copy</button>
           </div>
         </div>
-        <div className="buttons">
-          <button onClick={() => generateRandomQuote()}>New Quote</button>
-          <button onClick={() => speaker()}>Speak</button>
-        </div>
-      </div>
+      </section>
     </>
   );
 }

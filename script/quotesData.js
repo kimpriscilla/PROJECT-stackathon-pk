@@ -1,3 +1,5 @@
+// api https://zenquotes.io/api/quotes
+
 const quotesData = [
   {
     quote:
