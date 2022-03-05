@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
-    "start:dev": "npm run build:dev & nodemon server --ignore dist/ --ignore src/"
+    "start:dev": "npm run build:dev & nodemon server --ignore dist/ --ignore src/",
+    "start": "node server/index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,12 +20,12 @@
     "express": "^4.17.1",
     "file-loader": "^6.2.0",
     "pg": "^8.5.1",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "axios": "^0.21.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-react": "^7.12.7",
-    "axios": "^0.21.0",
     "babel-loader": "^8.2.2",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
