@@ -3,8 +3,9 @@ import { render } from "react-dom";
 import NavBar from "./navBar";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Main from "./main";
-import Sunset from "./sunset";
+import Ocean from "./ocean";
 import Galaxy from "./galaxy";
+import Grass from "./grass";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/ocean" component={Sunset} />
+        <Route exact path="/ocean" component={Ocean} />
         <Route exact path="/galaxy" component={Galaxy} />
+        <Route exact path="/grass" component={Grass} />
       </Switch>
     </div>
   );

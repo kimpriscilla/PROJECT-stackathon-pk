@@ -59,6 +59,11 @@ function NavBar() {
             Galaxy
           </Link>
         </MenuItem>
+        <MenuItem style={{ fontFamily: "dosis" }}>
+          <Link to="/grass" style={{ color: "#808080" }}>
+            Field
+          </Link>
+        </MenuItem>
       </Menu>
     </>
   );

@@ -19,7 +19,7 @@ function QuoteBox() {
         const { data } = await axios.get("/api/quotes");
         setQuotesArr(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
       //setLoading(false);
     };
@@ -35,10 +35,10 @@ function QuoteBox() {
 
   const speaker = () => {
     let utterance, voices;
-    // voices = window.speechSynthesis.getVoices();
-    console.log(voices);
     utterance = new SpeechSynthesisUtterance(`${quotes} by ${author}`);
-    //utterance.voice = voices[59];
+    voices = window.speechSynthesis.getVoices();
+    // utterance.voice = voices[7];
+    // console.log(voices);
     speechSynthesis.speak(utterance);
   };
 
