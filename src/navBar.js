@@ -1,8 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
@@ -57,8 +55,8 @@ function NavBar() {
           </Link>
         </MenuItem>
         <MenuItem style={{ fontFamily: "dosis" }}>
-          <Link to="/forest" style={{ color: "#808080" }}>
-            Forest
+          <Link to="/galaxy" style={{ color: "#808080" }}>
+            Galaxy
           </Link>
         </MenuItem>
       </Menu>

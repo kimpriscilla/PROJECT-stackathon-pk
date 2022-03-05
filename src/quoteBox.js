@@ -1,13 +1,9 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CampaignOutlinedIcon from "@mui/icons-material/CampaignOutlined";
-import ContentCopyRoundedIcon from "@mui/icons-material/ContentCopyRounded";
 import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
-import Button from "@mui/material/Button";
 import { IconButton } from "@mui/material";
-import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
 
 function QuoteBox() {
   //const [loading, setLoading] = useState(true);
